@@ -30,7 +30,7 @@ const RoutineForm: React.FC<RoutineFormProps> = ({ initialRoutine }) => {
         } else {
             addRoutine(routine.name)
         }
-        navigate('/')
+        navigate('/routine-clock')
     }
 
     const handleAddSeries = () => {
@@ -79,7 +79,7 @@ const RoutineForm: React.FC<RoutineFormProps> = ({ initialRoutine }) => {
     return (
         <div className='container max-w-md mx-auto px-4 py-6'>
             <div className='flex items-center mb-4'>
-                <Button variant='ghost' size='icon' onClick={() => navigate('/')} className='mr-2'>
+                <Button variant='ghost' size='icon' onClick={() => navigate('/routine-clock')} className='mr-2'>
                     <ChevronLeft size={20} />
                 </Button>
                 <h1 className='text-2xl font-bold'>{initialRoutine ? 'Edit Routine' : 'Create Routine'}</h1>

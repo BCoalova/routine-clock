@@ -17,7 +17,7 @@ const EditRoutine = () => {
         const timeout = setTimeout(() => {
             setIsLoading(false)
             if (!routine && !isLoading) {
-                navigate('/')
+                navigate('/routine-clock')
             }
         }, 300)
 
