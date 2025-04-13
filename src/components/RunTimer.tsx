@@ -381,7 +381,7 @@ const RunTimer: React.FC<RunTimerProps> = ({ routine }) => {
         <Button 
           variant="ghost" 
           size="icon" 
-          onClick={() => navigate("/")}
+          onClick={() => navigate("/routine-clock")}
           className="ml-2"
         >
           <X size={20} />

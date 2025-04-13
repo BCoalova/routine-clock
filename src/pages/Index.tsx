@@ -51,11 +51,11 @@ const Index = () => {
     });
   
   const handlePlay = (routineId: string) => {
-    navigate(`/timer/${routineId}`);
+    navigate(`/routine-clock/timer/${routineId}`);
   };
   
   const handleEdit = (routineId: string) => {
-    navigate(`/edit/${routineId}`);
+    navigate(`/routine-clock/edit/${routineId}`);
   };
   
   const handleDeleteConfirm = () => {
@@ -72,7 +72,7 @@ const Index = () => {
           <TimerIcon className="mr-2" />
           Rhythm Ritual
         </h1>
-        <Button onClick={() => navigate("/create")}>
+        <Button onClick={() => navigate("/routine-clock/create")}>
           <PlusCircle size={18} className="mr-2" />
           New
         </Button>
@@ -121,7 +121,7 @@ const Index = () => {
               Clear Search
             </Button>
           ) : (
-            <Button onClick={() => navigate("/create")}>
+            <Button onClick={() => navigate("/routine-clock/create")}>
               Create Your First Routine
             </Button>
           )}

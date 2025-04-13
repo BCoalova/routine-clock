@@ -73,7 +73,7 @@ const RoutineForm: React.FC<RoutineFormProps> = ({ initialRoutine }) => {
 
     const handlePlayRoutine = () => {
         updateRoutine(routine)
-        navigate(`/timer/${routine.id}`)
+        navigate(`/routine-clock/timer/${routine.id}`)
     }
 
     return (

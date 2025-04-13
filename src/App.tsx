@@ -23,10 +23,10 @@ const App = () => (
           <Sonner />
           <BrowserRouter>
             <Routes>
-              <Route path="/" element={<Index />} />
-              <Route path="/create" element={<CreateRoutine />} />
-              <Route path="/edit/:id" element={<EditRoutine />} />
-              <Route path="/timer/:id" element={<TimerPage />} />
+              <Route path="/routine-clock/" element={<Index />} />
+              <Route path="/routine-clock/create" element={<CreateRoutine />} />
+              <Route path="/routine-clock/edit/:id" element={<EditRoutine />} />
+              <Route path="/routine-clock/timer/:id" element={<TimerPage />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </BrowserRouter>

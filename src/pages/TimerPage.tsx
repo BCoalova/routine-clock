@@ -14,7 +14,7 @@ const TimerPage = () => {
   
   useEffect(() => {
     if (!routine) {
-      navigate("/");
+      navigate("/routine-clock");
     }
   }, [routine, navigate]);
   
