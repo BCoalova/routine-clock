@@ -192,17 +192,35 @@ const RepItem: React.FC<RepItemProps> = ({ rep, index, onChange, onDelete, canDe
       restDuration: Math.max(0, value)
     });
   };
+  
+  // This prevents the accordion from toggling when clicking the delete button
+  const handleDeleteClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    onDelete();
+  };
 
   return (
     <AccordionItem value={`rep-${index}`} className="border-0">
-      <AccordionTrigger className="py-2 px-3 rounded-md hover:bg-accent data-[state=open]:bg-accent text-sm">
-        <div className="flex items-center">
-          <span className="font-medium">Rep {index + 1}</span>
-          <span className="ml-2 text-xs text-muted-foreground">
-            {rep.repAmount}x {formatTime(rep.repDuration)} / {formatTime(rep.restDuration)} rest
-          </span>
-        </div>
-      </AccordionTrigger>
+      <div className="flex items-center">
+        <AccordionTrigger className="py-2 px-3 rounded-md hover:bg-accent data-[state=open]:bg-accent text-sm flex-1">
+          <div className="flex items-center">
+            <span className="font-medium">Rep {index + 1}</span>
+            <span className="ml-2 text-xs text-muted-foreground">
+              {rep.repAmount}x {formatTime(rep.repDuration)} / {formatTime(rep.restDuration)} rest
+            </span>
+          </div>
+        </AccordionTrigger>
+        {canDelete && (
+          <Button 
+            variant="ghost" 
+            size="sm" 
+            onClick={handleDeleteClick}
+            className="h-7 hover:text-destructive mr-2"
+          >
+            <Trash2 size={14} />
+          </Button>
+        )}
+      </div>
       <AccordionContent className="px-3 py-2">
         <div className="space-y-3">
           <div>
@@ -258,18 +276,6 @@ const RepItem: React.FC<RepItemProps> = ({ rep, index, onChange, onDelete, canDe
               className="py-1"
             />
           </div>
-          
-          {canDelete && (
-            <Button 
-              variant="ghost" 
-              size="sm" 
-              onClick={onDelete}
-              className="w-full text-xs justify-start text-muted-foreground hover:text-destructive"
-            >
-              <Trash2 size={14} className="mr-1" />
-              Delete Rep
-            </Button>
-          )}
         </div>
       </AccordionContent>
     </AccordionItem>
