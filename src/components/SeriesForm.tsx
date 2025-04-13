@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Series, Rep } from "@/types";
 import { Button } from "@/components/ui/button";
@@ -200,10 +199,10 @@ const RepItem: React.FC<RepItemProps> = ({ rep, index, onChange, onDelete, canDe
   };
 
   return (
-    <AccordionItem value={`rep-${index}`} className="border-0">
-      <div className="flex items-center">
-        <AccordionTrigger className="py-2 px-3 rounded-md hover:bg-accent data-[state=open]:bg-accent text-sm flex-1">
-          <div className="flex items-center">
+    <AccordionItem value={`rep-${index}`} className="border-0 w-full">
+      <div className="flex items-center w-full">
+        <AccordionTrigger className="py-2 px-3 rounded-md hover:bg-accent data-[state=open]:bg-accent text-sm flex-1 w-full">
+          <div className="flex items-center w-full">
             <span className="font-medium">Rep {index + 1}</span>
             <span className="ml-2 text-xs text-muted-foreground">
               {rep.repAmount}x {formatTime(rep.repDuration)} / {formatTime(rep.restDuration)} rest
