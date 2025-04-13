@@ -1,8 +1,8 @@
-
 import React, { createContext, useContext, useState, useEffect } from "react";
 import { Routine, Series, Rep } from "@/types";
 import { 
   createEmptyRoutine, 
+  createEmptySeries,
   getLocalStorageRoutines, 
   saveLocalStorageRoutines 
 } from "@/utils/timer-utils";
