@@ -200,26 +200,24 @@ const RepItem: React.FC<RepItemProps> = ({ rep, index, onChange, onDelete, canDe
 
   return (
     <AccordionItem value={`rep-${index}`} className="border-0 w-full">
-      <div className="flex items-center w-full">
-        <AccordionTrigger className="py-2 px-3 rounded-md hover:bg-accent data-[state=open]:bg-accent text-sm flex-1 w-full">
-          <div className="flex items-center w-full">
-            <span className="font-medium">Rep {index + 1}</span>
-            <span className="ml-2 text-xs text-muted-foreground">
-              {rep.repAmount}x {formatTime(rep.repDuration)} / {formatTime(rep.restDuration)} rest
-            </span>
-          </div>
-        </AccordionTrigger>
+      <AccordionTrigger className="w-full py-2 px-3 rounded-md hover:bg-accent data-[state=open]:bg-accent text-sm flex items-center justify-between">
+        <div className="flex items-center flex-1">
+          <span className="font-medium">Rep {index + 1}</span>
+          <span className="ml-2 text-xs text-muted-foreground">
+            {rep.repAmount}x {formatTime(rep.repDuration)} / {formatTime(rep.restDuration)} rest
+          </span>
+        </div>
         {canDelete && (
           <Button 
             variant="ghost" 
             size="sm" 
             onClick={handleDeleteClick}
-            className="h-7 hover:text-destructive mr-2"
+            className="h-7 hover:text-destructive ml-2"
           >
             <Trash2 size={14} />
           </Button>
         )}
-      </div>
+      </AccordionTrigger>
       <AccordionContent className="px-3 py-2">
         <div className="space-y-3">
           <div>
